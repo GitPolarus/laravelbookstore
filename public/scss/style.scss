@@ -1,0 +1,33 @@
+$dark: #023047;
+$primary: #219ebc;
+
+// import bootstrap
+
+@import "../bootstrap/scss/bootstrap";
+
+.login{
+    .bg-image-vertical {
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+    }
+    
+    @media (min-width: 1025px) {
+    .h-custom-2 {
+    height: 100%;
+    }
+    }
+}
+
+
+.register{
+    .head{
+        border-radius: 1rem 1rem 0 0;
+        height: 50vh;
+        background-image: url('../images/bookstore-bg.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+}

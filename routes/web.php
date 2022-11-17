@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\Home;
 use App\Http\Controllers\Auth;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Greeting;
 use Illuminate\Support\Facades\Route;
 
@@ -16,9 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', "Welcome")->name('home');
+Route::view('/', "Welcome")->name('view.home');
 
-Route::get('/login', [Auth::class, 'displayLogin'])->name('login');
-Route::get('/register', [Auth::class, 'displayRegister'])->name('register');
+// Authentication
+Route::get('/login', [AuthController::class, 'displayLogin'])->name('view.login');
+Route::get('/register', [AuthController::class, 'displayRegister'])->name('view.register');
+Route::post('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/admin', [Home::class, 'displayHome'])->name('admin.home');
+Route::get('/admin', [Home::class, 'displayHome'])->name('view.admin.home');

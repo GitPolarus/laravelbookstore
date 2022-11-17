@@ -22,7 +22,7 @@ return new class extends Migration {
             $table->enum('role', ['User', 'Admin'])->default('User');
             $table->rememberToken();
             $table->timestamps();
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->constrained()->nullable();
         });
     }
 
